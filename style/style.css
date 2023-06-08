@@ -1,0 +1,1153 @@
+/* ---- RESET ---- */
+*,
+*::before,
+*::after {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+a {
+	text-decoration: none;
+}
+ul {
+	list-style: none;
+}
+
+/* --- VARIABLES, BASES ET IMPORTS --- */
+@font-face {
+	font-family: "Futura";
+	src: url("/assets/FuturaBookfont.ttf");
+	font-weight: 400;
+}
+@font-face {
+	font-family: "Lemon Milk";
+	src: url("/assets/LEMONMILK-Medium.otf");
+	font-weight: 700;
+}
+@font-face {
+	font-family: "Futura Heavy";
+	src: url("/assets/FuturaHeavyfont.ttf");
+	font-weight: 900;
+}
+@font-face {
+	font-family: "Futura Medium";
+	src: url("/assets/futuramediumbt.ttf");
+	font-weight: 700;
+}
+
+:root {
+	font-size: 62.5%;
+
+	--primary-color: rgb(242, 188, 71);
+	--secondary-color: rgb(166, 176, 77);
+	--tertiary-color: rgb(252, 242, 218);
+	--bg-color: rgb(251, 251, 251);
+	--text-color: rgb(44, 41, 46);
+	--bg-footer-color: rgb(166, 176, 77, 0.75);
+
+	--text-font: "Futura", sans-serif;
+}
+
+h1,
+h2,
+h3,
+p {
+	color: var(--text-color);
+}
+
+h1 {
+	font-family: "Lemon Milk", sans-serif;
+	font-size: 3em;
+}
+h2 {
+	font-family: "Futura Heavy", sans-serif;
+	font-size: 2.5em;
+}
+h3 {
+	font-family: "Futura Medium", sans-serif;
+	font-size: 2.2em;
+}
+p {
+	font-size: 1.6em;
+}
+
+body {
+	font-family: var(--text-font);
+	color: var(--text-color);
+}
+
+@media (width >= 768px) {
+	h1 {
+		font-family: "Lemon Milk", sans-serif;
+		font-size: 4.8em;
+	}
+	h2 {
+		font-family: "Futura Heavy", sans-serif;
+		font-size: 3.6em;
+	}
+	h3 {
+		font-family: "Futura Medium", sans-serif;
+		font-size: 2.6em;
+	}
+	p {
+		font-size: 1.8em;
+	}
+}
+
+/* -- NAV ET FOOTER -- */
+.nav-logo {
+	height: 100px;
+	margin: 25px;
+}
+.joy-logo {
+	height: 57px;
+}
+
+.desktop-nav {
+	display: none;
+}
+
+header {
+	height: 8rem;
+	background-color: var(--bg-color);
+	box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+	position: fixed;
+	width: 100vw;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-direction: row-reverse;
+	padding: 2rem;
+}
+
+/* -- BURGER MENU --  */
+.sidenav {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+	height: 100%;
+	width: 100vw;
+	position: fixed;
+	z-index: 1;
+	top: 0px;
+	left: -1500px;
+	background-color: var(--bg-color);
+	padding-top: 20px;
+	text-align: center;
+	transition: left 0.5s ease 0s;
+}
+
+/* Sidenav menu links */
+.sidenav a {
+	text-decoration: none;
+	display: block;
+	transition: 0.3s;
+	color: var(--text-color);
+}
+
+.sidenav ul {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	height: 80%;
+}
+
+/* Active class */
+.sidenav.active {
+	left: 0;
+}
+
+/* Close btn */
+.sidenav .close {
+	position: absolute;
+	top: 0;
+	right: 25px;
+	font-size: 36px;
+}
+
+/* Icône burger */
+.burger-icon {
+	position: relative;
+	top: 0.5rem;
+}
+.burger-icon span {
+	display: block;
+	width: 35px;
+	height: 4px;
+	border-radius: 5px;
+	background-color: var(--text-color);
+}
+.b-icon1 {
+	margin: 0 0 6px 0;
+}
+.b-icon2 {
+	margin: 6px 0;
+}
+
+#closeBtn {
+	margin-top: 1rem;
+}
+
+main {
+	background-color: var(--bg-color);
+	padding-top: 8rem;
+}
+
+footer {
+	background-color: var(--bg-footer-color);
+	text-align: center;
+	padding: 4.3rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 3rem;
+}
+
+.footer-section {
+	display: flex;
+	flex-direction: column;
+	gap: 4rem;
+}
+
+.joy-coordonnées {
+	display: flex;
+	flex-direction: column;
+	gap: 2.5rem;
+}
+
+.joy-socials {
+	display: flex;
+	flex-direction: column;
+	gap: 2.5rem;
+	align-items: center;
+}
+
+.joy-ouverture {
+	display: none;
+}
+
+.nom-adresse {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+.num-mail {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	font-weight: 700;
+}
+
+.newsletter {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+form {
+	display: flex;
+	flex-direction: row;
+	gap: 5px;
+	align-items: center;
+}
+input {
+	font-family: var(--text-font);
+}
+
+.input-mail {
+	width: 205px;
+	height: 26px;
+	border: solid 1px var(--secondary-color);
+	border-radius: 5px;
+	padding: 0px 5px;
+	font-size: 1.6em;
+	box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1);
+	background-color: var(--bg-color);
+	color: var(--text-color);
+}
+.input-mail:focus-visible {
+	outline: 2px solid var(--secondary-color);
+}
+.input-submit {
+	width: 30px;
+	height: 26px;
+	border: solid 1px var(--secondary-color);
+	border-radius: 5px;
+	font-size: 1.6em;
+	background-color: var(--text-color);
+	color: var(--bg-color);
+}
+
+.socials {
+	display: flex;
+	flex-direction: row;
+	gap: 3rem;
+}
+.social-logo {
+	height: 35px;
+}
+
+/* -- CSS INDEX -- */
+.joy-resume,
+.ecorespo-resume {
+	background-color: var(--tertiary-color);
+}
+
+.img-entete {
+	width: 100%;
+}
+
+.joy-intro {
+	padding: 5.3rem;
+	text-align: center;
+	color: var(--text-color);
+}
+.joy-intro > h1 {
+	padding-bottom: 25px;
+}
+
+.valeurs-resume {
+	padding: 5.3rem;
+}
+
+.img-valeurs {
+	height: 250px;
+	width: 100%;
+	object-fit: cover;
+	margin-bottom: 25px;
+	border-radius: 3px;
+}
+
+.valeurs-intro {
+	color: var(--text-color);
+}
+.valeurs-intro > p {
+	margin-bottom: 10px;
+}
+.valeurs-intro > h2 {
+	color: var(--primary-color);
+	padding-bottom: 15px;
+}
+
+.savoir-plus-btn {
+	font-family: var(--text-font);
+	font-size: 1.6em;
+	font-weight: 700;
+	color: var(--text-color);
+}
+
+.ecorespo-resume {
+	padding: 5.3rem;
+}
+
+.ecorespo-intro {
+	color: var(--text-color);
+}
+.ecorespo-intro > p {
+	margin-bottom: 10px;
+}
+.ecorespo-intro > h2 {
+	color: var(--secondary-color);
+	padding-bottom: 15px;
+}
+
+.img-ecorespo {
+	height: 200px;
+	width: 100%;
+	object-fit: cover;
+	margin-top: 25px;
+	border-radius: 3px;
+}
+
+/* -- CSS MENU -- */
+.hero-menu {
+	background-image: url(/assets/images/eaters-collective-ddZYOtZUnBk-unsplash.jpg);
+	background-size: 140%;
+	background-repeat: no-repeat;
+	background-position-x: -8rem;
+	background-position-y: -5rem;
+	height: 21.3rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: var(--text-color);
+	text-shadow: 2px 2px 5px rgb(255, 255, 255);
+}
+
+.menu-section {
+	padding: 5rem;
+	background: var(--tertiary-color);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.tableonglets {
+	width: 100%;
+	background: var(--tertiary-color);
+	text-align: center;
+}
+
+.tableonglets div.ongletcont {
+	display: none;
+}
+.tableonglets input {
+	display: none;
+}
+.tableonglets input:checked + div.ongletcont {
+	display: block;
+}
+.tableonglets div.ongletcont {
+	width: 100%;
+	padding: 30px 0;
+	overflow: auto;
+	background: var(--tertiary-color);
+}
+.tableonglets label.onglet {
+	display: inline-block;
+	width: 100px;
+	margin: 0 15px;
+	text-align: center;
+	background: var(--tertiary-color);
+	cursor: pointer;
+}
+
+.onglet > p {
+	font-weight: 600;
+	text-decoration: underline;
+	text-underline-offset: 4px;
+	text-decoration-color: var(--primary-color);
+	text-decoration-thickness: 2px;
+}
+
+.onglet-globalflex {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.menu-separator {
+	color: var(--primary-color);
+}
+
+.menu-contentflex {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 15px;
+}
+
+.dish-content {
+	font-size: 0.8em;
+}
+
+.menu-dl-btn {
+	width: 175px;
+	height: 30px;
+	font-size: 1.6em;
+	border-radius: 10px;
+	border: none;
+	background-color: var(--secondary-color);
+	color: var(--tertiary-color);
+	font-weight: 700;
+	box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.menu-dl-btn:active {
+	background-color: var(--bg-footer-color);
+}
+
+/* -- CSS ABOUT -- */
+
+.valeurs-section {
+	background-color: var(--tertiary-color);
+	padding: 5.3rem;
+}
+.valeurs-section > h2 {
+	color: var(--secondary-color);
+	padding-bottom: 15px;
+}
+
+.joyresto-img {
+	width: 100%;
+	height: 280px;
+	object-fit: cover;
+}
+
+.ecorespo-section {
+	background-color: var(--bg-color);
+	padding: 5.3rem;
+}
+.ecorespo-section > h2 {
+	color: var(--primary-color);
+	padding-bottom: 15px;
+}
+
+.partenaires-section {
+	background-color: var(--tertiary-color);
+}
+.partenaires-section > h1 {
+	text-align: center;
+	padding: 4rem;
+}
+.partenaires-section p {
+	padding: 2.5rem 5.3rem 4rem;
+}
+.partenaires-section a {
+	color: var(--secondary-color);
+	font-family: "Futura Heavy";
+}
+
+.partenaires-pos {
+	display: flex;
+	flex-direction: column;
+}
+
+.part-flex > h3 {
+	display: none;
+}
+
+.larrouspintan-img {
+	width: 65%;
+	height: 180px;
+	object-fit: cover;
+	border-radius: 0 10px 10px 0;
+	box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+}
+.elizaldia-img {
+	width: 65%;
+	height: 180px;
+	object-fit: cover;
+	border-radius: 10px 0 0 10px;
+	box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.larrouspintan-pos {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.elizaldia-pos {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-end;
+}
+
+.larrous-txt {
+	padding-left: 2.5rem;
+	height: 136px;
+	object-fit: cover;
+}
+.elizaldia-txt {
+	padding-right: 2.5rem;
+	height: 146px;
+	object-fit: cover;
+}
+.pintan-txt {
+	padding-left: 2.5rem;
+	height: 120px;
+	object-fit: cover;
+}
+
+/* -- CSS GIFTCARDS -- */
+
+.card-tablet-mode {
+	display: block;
+}
+
+.section-gifts {
+	padding: 5.3rem;
+}
+
+.gifts-intro {
+	text-align: center;
+	padding-bottom: 5.3rem;
+}
+.gifts-intro > h1 {
+	padding-bottom: 25px;
+}
+
+.giftcards {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 4rem;
+}
+
+.card-container {
+	width: 283px;
+	height: 418px;
+	border-radius: 10px;
+	box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+}
+
+.duo {
+	background-image: url(/assets/images/jennifer-schmidt-MRHyv-hHxgk-unsplash.jpg);
+	background-size: cover;
+	margin-bottom: 4rem;
+}
+.complet {
+	background-image: url(/assets/images/cala-w6ftFbPCs9I-unsplash.jpg);
+	background-size: cover;
+}
+.extra {
+	background-image: url(/assets/images/monika-grabkowska-FVf1ESEBuMI-unsplash.jpg);
+	background-size: cover;
+}
+
+.card-cover {
+	width: 100%;
+	height: 221px;
+	background-color: var(--tertiary-color);
+	border-radius: 75px 75px 0 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+	padding: 2rem;
+	text-align: center;
+}
+.card-cover > p:first-child {
+	font-weight: 700;
+}
+
+.btn-menu {
+	background-color: transparent;
+	border: none;
+	padding-right: 25px;
+	font-family: var(--text-font);
+	font-size: 1.6em;
+	font-weight: 700;
+}
+.btn-menu > a {
+	color: var(--text-color);
+}
+
+.btn-achat {
+	background-color: transparent;
+	border: solid 2px var(--secondary-color);
+	width: 79px;
+	height: 29px;
+	border-radius: 10px;
+	font-family: var(--text-font);
+	font-size: 1.6em;
+	font-weight: 700;
+}
+.btn-achat > a {
+	color: var(--secondary-color);
+}
+
+.btn-achat:active {
+	background-color: var(--secondary-color);
+}
+.btn-achat > a:active {
+	color: var(--tertiary-color);
+}
+
+/* -- CSS CONTACT -- */
+
+.contact-section {
+	background-color: var(--tertiary-color);
+	text-align: center;
+	padding: 5.3rem;
+}
+
+.joy-horaires {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+	margin: 4rem 0;
+}
+.joy-horaires > h3 {
+	color: var(--secondary-color);
+}
+
+.joy-contact {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	margin-bottom: 3.5rem;
+}
+.joy-contact > p {
+	font-weight: 700;
+}
+
+.social-contact {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	gap: 4rem;
+}
+
+.map-section {
+	text-align: center;
+	padding: 5.3rem 3rem;
+}
+
+.map-joy {
+	width: 100%;
+	height: 30rem;
+}
+
+.adresse-joy {
+	margin-top: 2.5rem;
+}
+
+@media (736px <= width <= 1023.99px) {
+	/* -- CSS INDEX -- */
+
+	.joy-intro {
+		padding: 7.3rem;
+	}
+
+	.valeurs-resume {
+		padding: 7.3rem;
+	}
+
+	.img-valeurs {
+		height: 550px;
+		margin-bottom: 3.5rem;
+	}
+
+	.savoir-plus-btn {
+		font-size: 1.8em;
+	}
+
+	.ecorespo-resume {
+		padding: 7.3rem;
+	}
+
+	.img-ecorespo {
+		height: 550px;
+		margin-top: 3.5rem;
+	}
+
+	/* -- CSS MENU -- */
+	.hero-menu {
+		background-position-x: -20rem;
+		background-position-y: -16rem;
+		height: 30rem;
+	}
+
+	.menu-section {
+		padding: 7.3rem;
+	}
+
+	.tableonglets div.ongletcont {
+		padding: 50px 0;
+	}
+
+	.tableonglets label.onglet {
+		margin: 0 9rem;
+	}
+
+	.dish-content {
+		font-size: 0.8em;
+	}
+
+	.menu-dl-btn {
+		width: 220px;
+		height: 35px;
+		font-size: 1.8em;
+	}
+
+	/* -- CSS ABOUT -- */
+
+	.valeurs-section {
+		padding: 7.3rem;
+	}
+
+	.joyresto-img {
+		height: 380px;
+	}
+
+	.ecorespo-section {
+		padding: 7.3rem;
+	}
+
+	.partenaires-section > h1 {
+		padding: 6rem;
+	}
+	.partenaires-section > div > p {
+		padding: 5rem 7.3rem 6rem;
+	}
+
+	.larrouspintan-img {
+		width: 65%;
+		height: 270px;
+	}
+	.elizaldia-img {
+		width: 65%;
+		height: 270px;
+	}
+	.larrous-txt {
+		padding-left: 3.5rem;
+	}
+	.elizaldia-txt {
+		padding-right: 3.5rem;
+	}
+	.pintan-txt {
+		padding-left: 3.5rem;
+	}
+
+	/* -- CSS GIFTCARDS -- */
+
+	.section-gifts {
+		padding: 7.3rem;
+	}
+
+	.gifts-intro {
+		padding-bottom: 7.3rem;
+	}
+	.gifts-intro > h1 {
+		padding-bottom: 35px;
+	}
+
+	.card-tablet-mode {
+		display: flex;
+		flex-direction: row;
+		gap: 4rem;
+	}
+
+	.duo {
+		margin-bottom: 0;
+	}
+
+	/* -- CSS CONTACT -- */
+
+	.contact-section {
+		background-color: var(--tertiary-color);
+		text-align: center;
+		padding: 7.3rem;
+	}
+
+	.map-section {
+		padding: 7.3rem;
+	}
+
+	.map-joy {
+		width: 100%;
+		height: 50rem;
+	}
+
+	.adresse-joy {
+		margin-top: 3.5rem;
+	}
+}
+
+@media (width >= 1024px) {
+	main {
+		padding-top: 13rem;
+	}
+
+	header {
+		height: 13rem;
+		justify-content: space-evenly;
+		align-items: center;
+		flex-direction: row;
+		padding: 2rem;
+	}
+
+	.joy-logo {
+		display: none;
+	}
+
+	.desktop-nav {
+		display: block;
+	}
+
+	.mobile-nav {
+		display: none;
+	}
+
+	.joy-logo-desktop {
+		height: 80px;
+	}
+
+	.desktop-nav > ul {
+		display: flex;
+		align-items: center;
+		justify-content: space-evenly;
+		gap: 6rem;
+	}
+
+	li > a > h3 {
+		font-size: 2.4em;
+	}
+
+	footer {
+		gap: 1rem;
+		display: flex;
+		align-items: stretch;
+		padding: 5.3rem 5.3rem 4.3rem 5.3rem;
+		justify-content: center;
+	}
+
+	.footer-section {
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.joy-coordonnées {
+		flex-basis: 30%;
+	}
+
+	.joy-socials {
+		flex-basis: 40%;
+	}
+	.input-mail {
+		height: 35px;
+		width: 280px;
+		padding: 0px 10px;
+	}
+	.input-submit {
+		height: 35px;
+		width: 35px;
+	}
+
+	.joy-ouverture {
+		display: block;
+		flex-basis: 30%;
+	}
+
+	.joy-horaire {
+		display: flex;
+		flex-direction: column;
+		gap: 15px;
+		margin: 3rem 0 0;
+	}
+	/* -- CSS INDEX -- */
+	.joy-resume,
+	.ecorespo-resume {
+		background-color: var(--tertiary-color);
+	}
+
+	.img-entete {
+		width: 100%;
+		height: 70rem;
+		object-fit: cover;
+	}
+
+	.joy-intro {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		padding: 7.3rem 0;
+	}
+
+	.joy-intro > p {
+		width: 90rem;
+	}
+
+	.valeurs-resume {
+		display: flex;
+		flex-direction: row;
+		gap: 10rem;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.img-valeurs {
+		max-width: 45rem;
+		max-height: 30rem;
+		min-width: 45rem;
+		min-height: 30rem;
+		margin-bottom: 0;
+		object-position: 0% 100%;
+	}
+
+	.valeurs-intro {
+		width: 65rem;
+	}
+
+	.ecorespo-resume {
+		display: flex;
+		flex-direction: row;
+		gap: 10rem;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.img-ecorespo {
+		max-width: 45rem;
+		max-height: 30rem;
+		min-width: 45rem;
+		min-height: 30rem;
+		margin-top: 0;
+	}
+
+	.ecorespo-intro {
+		width: 65rem;
+	}
+
+	/* -- CSS MENU -- */
+
+	.hero-menu {
+		height: 45.3rem;
+		background-position-x: -24rem;
+		background-position-y: -21rem;
+	}
+
+	.tableonglets div.ongletcont {
+		padding: 50px 0;
+	}
+
+	.tableonglets label.onglet {
+		margin: 0 100px;
+	}
+
+	/* -- CSS ABOUT -- */
+
+	.valeurs-desktop-text {
+		display: grid;
+		grid-template-columns: repeat(2, 45%);
+		gap: 5rem;
+	}
+
+	.joyresto-img {
+		height: 55rem;
+	}
+
+	.ecorespo-desktop-text {
+		display: grid;
+		grid-template-columns: repeat(2, 45%);
+		gap: 5rem;
+	}
+
+	.valeurs-section {
+		padding: 7.2rem;
+	}
+	.ecorespo-section {
+		padding: 7.2rem;
+	}
+
+	.valeurs-section > h2 {
+		padding-bottom: 20px;
+	}
+
+	.ecorespo-section > h2 {
+		padding-bottom: 20px;
+	}
+
+	.partenaires-section {
+		padding: 7.3rem;
+	}
+	.partenaires-section > h1 {
+		padding: 0;
+		padding-bottom: 5.3rem;
+	}
+
+	.larrous-txt,
+	.elizaldia-txt,
+	.pintan-txt {
+		display: none;
+	}
+
+	.partenaires-pos {
+		display: grid;
+		grid-template-columns: repeat(3, 33%);
+		justify-content: center;
+		gap: 2rem;
+	}
+
+	.larrouspintan-pos,
+	.elizaldia-pos {
+		display: block;
+	}
+
+	.part-flex {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 2rem;
+	}
+	.part-flex > h3 {
+		display: block;
+		margin-bottom: 1rem;
+	}
+
+	.larrouspintan-img,
+	.elizaldia-img {
+		width: 30rem;
+		border-radius: 10px;
+		height: 20rem;
+	}
+
+	.partenaires-section p {
+		padding: 0;
+		width: 30rem;
+	}
+
+	/* CSS GIFTCARDS */
+
+	.card-tablet-mode {
+		display: flex;
+		flex-direction: row;
+		gap: 8rem;
+	}
+
+	.giftcards {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 8rem;
+	}
+
+	.duo,
+	.complet {
+		margin-bottom: 0;
+	}
+
+	.card-container {
+		width: 300px;
+		height: 450px;
+	}
+
+	.card-cover {
+		width: 100%;
+		height: 223px;
+		padding: 0 2rem;
+	}
+
+	.gifts-intro {
+		padding-bottom: 7.3rem;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.gifts-intro > p {
+		width: 85rem;
+	}
+
+	.card-cover > p:nth-child(2) {
+		font-size: 1.6em;
+		width: 22rem;
+	}
+
+	/* CSS CONTACT */
+
+	.map-section {
+		padding: 7.3rem;
+	}
+
+	.map-joy {
+		width: 70rem;
+		height: 50rem;
+	}
+}
