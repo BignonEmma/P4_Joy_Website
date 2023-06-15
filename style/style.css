@@ -419,12 +419,13 @@ input {
 	cursor: pointer;
 }
 
-.onglet > p {
+label.onglet {
 	font-weight: 600;
 	text-decoration: underline;
 	text-underline-offset: 4px;
 	text-decoration-color: var(--primary-color);
 	text-decoration-thickness: 2px;
+	font-size: 2em;
 }
 
 .onglet-globalflex {
@@ -449,8 +450,7 @@ input {
 }
 
 .menu-dl-btn {
-	width: 175px;
-	height: 30px;
+	padding: 6px 25px;
 	font-size: 1.6em;
 	border-radius: 10px;
 	border: none;
@@ -631,8 +631,6 @@ input {
 	font-family: var(--text-font);
 	font-size: 1.6em;
 	font-weight: 700;
-}
-.btn-menu > a {
 	color: var(--text-color);
 }
 
@@ -645,15 +643,12 @@ input {
 	font-family: var(--text-font);
 	font-size: 1.6em;
 	font-weight: 700;
-}
-.btn-achat > a {
+	padding: 2.5px 10px;
 	color: var(--secondary-color);
 }
 
 .btn-achat:active {
 	background-color: var(--secondary-color);
-}
-.btn-achat > a:active {
 	color: var(--tertiary-color);
 }
 
@@ -759,8 +754,7 @@ input {
 	}
 
 	.menu-dl-btn {
-		width: 220px;
-		height: 35px;
+		padding: 6px 25px;
 		font-size: 1.8em;
 	}
 
@@ -938,7 +932,7 @@ input {
 
 	.img-entete {
 		width: 100%;
-		height: 70rem;
+		height: 67vh;
 		object-fit: cover;
 	}
 
@@ -960,13 +954,14 @@ input {
 		gap: 10rem;
 		align-items: center;
 		justify-content: center;
+		padding: 7.3rem;
 	}
 
 	.img-valeurs {
-		max-width: 45rem;
-		max-height: 30rem;
-		min-width: 45rem;
-		min-height: 30rem;
+		max-width: 40%;
+		max-height: 50rem;
+		min-width: 30%;
+		min-height: 40rem;
 		margin-bottom: 0;
 		object-position: 0% 100%;
 	}
@@ -981,13 +976,14 @@ input {
 		gap: 10rem;
 		align-items: center;
 		justify-content: center;
+		padding: 7.3rem;
 	}
 
 	.img-ecorespo {
-		max-width: 45rem;
-		max-height: 30rem;
-		min-width: 45rem;
-		min-height: 30rem;
+		max-width: 40%;
+		max-height: 50rem;
+		min-width: 30%;
+		min-height: 40rem;
 		margin-top: 0;
 	}
 
@@ -1015,7 +1011,7 @@ input {
 
 	.valeurs-desktop-text {
 		display: grid;
-		grid-template-columns: repeat(2, 45%);
+		grid-template-columns: repeat(2, 48%);
 		gap: 5rem;
 	}
 
@@ -1025,7 +1021,7 @@ input {
 
 	.ecorespo-desktop-text {
 		display: grid;
-		grid-template-columns: repeat(2, 45%);
+		grid-template-columns: repeat(2, 48%);
 		gap: 5rem;
 	}
 
@@ -1062,12 +1058,13 @@ input {
 		display: grid;
 		grid-template-columns: repeat(3, 33%);
 		justify-content: center;
-		gap: 2rem;
+		gap: 3rem;
 	}
 
 	.larrouspintan-pos,
 	.elizaldia-pos {
 		display: block;
+		width: 100%;
 	}
 
 	.part-flex {
@@ -1083,14 +1080,14 @@ input {
 
 	.larrouspintan-img,
 	.elizaldia-img {
-		width: 30rem;
+		width: 100%;
 		border-radius: 10px;
 		height: 20rem;
 	}
 
 	.partenaires-section p {
 		padding: 0;
-		width: 30rem;
+		width: 100%;
 	}
 
 	/* CSS GIFTCARDS */
@@ -1115,13 +1112,13 @@ input {
 	}
 
 	.card-container {
-		width: 300px;
-		height: 450px;
+		width: 350px;
+		height: 500px;
 	}
 
 	.card-cover {
 		width: 100%;
-		height: 223px;
+		height: 250px;
 		padding: 0 2rem;
 	}
 
@@ -1135,19 +1132,124 @@ input {
 		width: 85rem;
 	}
 
+	.card-cover > p:first-child(2) {
+		font-size: 2em;
+	}
 	.card-cover > p:nth-child(2) {
-		font-size: 1.6em;
 		width: 22rem;
 	}
 
-	/* CSS CONTACT */
-
-	.map-section {
-		padding: 7.3rem;
+	.btn-menu {
+		font-size: 1.8em;
+	}
+	.btn-achat {
+		font-size: 1.8em;
 	}
 
+	/* CSS CONTACT */
+	.contact-main {
+		height: calc(100vh - 279.67px);
+	}
+
+	.contact-desktop-agencement {
+		display: flex;
+		flex-direction: row;
+		height: 100%;
+	}
+
+	.contact-section {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		flex-basis: 50%;
+	}
+	.map-section {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		flex-basis: 50%;
+		padding: 7.3rem;
+	}
 	.map-joy {
-		width: 70rem;
-		height: 50rem;
+		width: 100%;
+		height: 50em;
+	}
+}
+
+@media (width >= 1439.99px) {
+	.valeurs-section,
+	.ecorespo-section {
+		padding: 7.3rem 10.3rem;
+	}
+
+	.larrouspintan-img,
+	.elizaldia-img {
+		border-radius: 10px;
+		height: 30rem;
+	}
+
+	.contact-section {
+		padding: 10.3em;
+	}
+	.map-section {
+		padding: 10.3em;
+	}
+}
+
+/* --- CALL TO ACTIONS --- */
+
+li > a > h3:hover {
+	text-decoration: underline;
+	text-underline-offset: 3px;
+}
+li > a > h3:active {
+	text-decoration: underline;
+	text-underline-offset: 3px;
+	text-decoration-color: var(--secondary-color);
+	color: var(--secondary-color);
+}
+
+.savoir-plus-btn:hover,
+label.onglet:hover {
+	font-style: italic;
+}
+
+.menu-dl-btn:hover {
+	background-color: var(--bg-footer-color);
+	cursor: pointer;
+}
+
+.partenaires-section a:hover {
+	font-style: italic;
+}
+
+.btn-menu:hover {
+	font-style: italic;
+}
+
+.btn-achat:hover {
+	background-color: var(--secondary-color);
+	color: var(--tertiary-color);
+}
+
+img.joy-logo-desktop:hover {
+	animation: tilt-shaking 0.25s ease-in;
+}
+
+@keyframes tilt-shaking {
+	0% {
+		transform: rotate(0deg);
+	}
+	25% {
+		transform: rotate(5deg);
+	}
+	50% {
+		transform: rotate(1deg);
+	}
+	75% {
+		transform: rotate(-5deg);
+	}
+	100% {
+		transform: rotate(0deg);
 	}
 }
